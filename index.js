@@ -23,6 +23,10 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', userSchema);
 
+app.get("/",function(req,res){
+    res.sendFile(__dirname + "/signup.html")
+});
+
 app.post('/signup', async (req, res) => {
   try {
     const { name, email, phone } = req.body;
